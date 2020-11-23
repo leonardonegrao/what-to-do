@@ -1,31 +1,48 @@
+import { useState, useEffect } from 'react'
 import { FiStar, FiTrash } from 'react-icons/fi'
 import { Container } from './styles'
 
+interface Task {
+    title: string
+    date: string
+    group?: string
+    isImportant: boolean
+}
+
 interface TaskProps {
-    task: {
-        title: string
-        date: string
-        group?: string
-        isImportant: boolean
-    }
+    task: Task
     onRemove: Function
 }
 
 function Task({ task, onRemove }: TaskProps): JSX.Element {
+    const [taskState, setTaskState] = useState<Task>({ title: '', date: '', isImportant: false })
+
+    useEffect(() => {
+        setTaskState(task)
+    }, [])
+
     return (
         <Container>
             <div>
                 <div className="label" />
 
                 <p className="task-title">
-                    {task.title}
+                    {taskState.title}
                 </p>
 
-                <p className="description">{task.group ? task.group : ''} - {task.date}</p>
+                <p className="description">
+                    {taskState.group ? `${taskState.group} - ` : 'Não atribuída - '} {taskState.date}
+                </p>
             </div>
 
             <div>
-                <FiStar size={20} color={'#4948C0'} fill={'#4948C0'} fillOpacity={task.isImportant ? 1 : 0} />
+                <FiStar
+                    size={20}
+                    color={'#4948C0'}
+                    fill={'#4948C0'}
+                    fillOpacity={taskState.isImportant ? 1 : 0}
+                    onClick={() => setTaskState({ ...taskState, isImportant: !taskState.isImportant })}
+                />
                 <FiTrash size={20} color={'#AC4345'} onClick={() => onRemove(task.title)} />
             </div>
 

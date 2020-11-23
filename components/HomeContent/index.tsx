@@ -25,7 +25,7 @@ function HomeContent(): JSX.Element {
 
     return (
         <Container>
-            <h1>Tarefas / Hoje</h1>
+            <h1>Tarefas</h1>
 
             <NewTask onSubmit={addTask} />
             {tasks.map((task, index) => <Task key={index} task={task} onRemove={removeTask} />)}

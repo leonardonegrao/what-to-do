@@ -1,4 +1,4 @@
-import { FiSun, FiStar, FiList } from 'react-icons/fi'
+import { FiSun, FiStar, FiList, FiHelpCircle } from 'react-icons/fi'
 import MenuOption from '../MenuOption'
 import { Container } from './styles'
 
@@ -14,6 +14,11 @@ function MenuGroups(): JSX.Element {
                 title="Importante"
                 status={false}
                 Icon={FiStar}
+            />
+            <MenuOption
+                title="Não atribuídas"
+                status={false}
+                Icon={FiHelpCircle}
             />
             <MenuOption
                 title="Udemy"

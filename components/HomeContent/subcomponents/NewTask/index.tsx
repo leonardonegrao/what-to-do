@@ -14,6 +14,10 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
     function handleSubmit(event: FormEvent<HTMLFormElement>): void {
         event.preventDefault()
 
+        createTask()
+    }
+
+    function createTask() {
         onSubmit({
             title,
             date: '23 de Novembro',
@@ -47,7 +51,7 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
                 <NewTaskButton>
                     <FiCalendar size={40} strokeWidth={1} onClick={handleShowCalendar} />
                 </NewTaskButton>
-                <NewTaskButton type="submit">
+                <NewTaskButton type="submit" onClick={createTask}>
                     <FiPlus size={40} strokeWidth={1} />
                 </NewTaskButton>
             </Container>
