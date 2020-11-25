@@ -3,12 +3,15 @@ import Calendar from 'react-calendar'
 import { FiCalendar, FiPlus } from 'react-icons/fi'
 import { Container, CalendarContainer, NewTaskButton } from './styles'
 
+import 'react-calendar/dist/Calendar.css';
+
 interface NewTaskProps {
     onSubmit: Function
 }
 
 function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
     const [title, setTitle] = useState('')
+    const [taskDate, setTaskDate] = useState<Date>(new Date())
     const [showCalendar, setShowCalendar] = useState(false)
 
     function handleSubmit(event: FormEvent<HTMLFormElement>): void {
@@ -20,9 +23,8 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
     function createTask() {
         onSubmit({
             title,
-            date: '23 de Novembro',
+            date: taskDate,
             isImportant: false,
-
         })
 
         setTitle('')
@@ -33,7 +35,7 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
     }
 
     function handleChangeCalendar(date: Date) {
-        console.log(date)
+        setTaskDate(date)
     }
 
     return (
