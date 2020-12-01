@@ -6,7 +6,8 @@ interface Task {
     title: string
     date: Date
     group?: string
-    isImportant: boolean
+    isImportant: boolean,
+    status: boolean
 }
 
 interface TaskProps {
@@ -20,7 +21,7 @@ function Task({ task, onRemove }: TaskProps): JSX.Element {
     const [editingTask, setEditingTask] = useState<Task>(taskState)
 
     function getDate(date: Date): string {
-        return date.toLocaleString('pt-BR', {
+        return date.toLocaleString('en-US', {
             day: 'numeric',
             month: 'long',
         })
@@ -30,7 +31,11 @@ function Task({ task, onRemove }: TaskProps): JSX.Element {
         setIsEditing(!isEditing)
     }
 
-    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    function handleCheck() {
+        setTaskState({...taskState, status: !taskState.status})
+    }
+
+    function handleSubmit(event: FormEvent<HTMLFormElement | HTMLButtonElement>) {
         event.preventDefault()
 
         setTaskState({ ...editingTask })
@@ -46,7 +51,7 @@ function Task({ task, onRemove }: TaskProps): JSX.Element {
     return (
         <>
             {!isEditing ? (
-                <Container>
+                <Container opacity={taskState.status ? 1 : 0.5} >
                     <div>
                         <div className="label" />
 
@@ -60,6 +65,7 @@ function Task({ task, onRemove }: TaskProps): JSX.Element {
                     </div>
 
                     <div>
+                        <FiCheck size={20} color={`#4948C0`} onClick={handleCheck} />
                         <FiEdit size={20} color={`#4948C0`} onClick={handleEditing} />
                         <FiStar
                             size={20}

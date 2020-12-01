@@ -25,6 +25,7 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
             title,
             date: taskDate,
             isImportant: false,
+            status: true,
         })
 
         setTitle('')
@@ -43,7 +44,7 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
             <Container>
                 <form onSubmit={handleSubmit}>
                     <input
-                        placeholder="Adicionar nova tarefa"
+                        placeholder="Create new task"
                         value={title}
                         onChange={(event) => setTitle(event.target.value)}
                         type="text"
@@ -59,7 +60,7 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
             </Container>
             {showCalendar && (
                 <CalendarContainer>
-                    <Calendar className="calendar" onChange={handleChangeCalendar} locale="pt-BR" />
+                    <Calendar className="calendar" onChange={handleChangeCalendar} />
                 </CalendarContainer>
             )}
         </>

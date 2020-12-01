@@ -1,6 +1,12 @@
-import styled from 'styled-components'
+import styled, { StyledFunction } from 'styled-components'
 
-export const Container = styled.div`
+interface ContainerProps {
+    opacity: number
+}
+
+export const Container = styled.div<ContainerProps>`
+    opacity: ${props => props.opacity};
+
     height: 80px;
     width: 927px;
 
@@ -62,6 +68,8 @@ export const EditingContainer = styled.div`
         border: 0;
         border-radius: 24px;
 
+        outline: 0;
+
         padding-left: 24px;
         font-size: 24px;
         color: #333333;
@@ -81,6 +89,7 @@ export const EditTaskButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 0;
 
     &.cancel {
         background-color: #AC4345;

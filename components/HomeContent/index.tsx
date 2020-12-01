@@ -3,17 +3,17 @@ import NewTask from './subcomponents/NewTask'
 import Task from './subcomponents/Task'
 import { Container } from './styles'
 
-interface Task {
+interface ITask {
     title: string
     group?: string
-    date: string
+    date: Date
     isImportant: boolean
 }
 
 function HomeContent(): JSX.Element {
-    const [tasks, setTasks] = useState<Task[]>([])
+    const [tasks, setTasks] = useState<ITask[]>([])
 
-    function addTask(task: Task) {
+    function addTask(task: ITask) {
         setTasks([...tasks, task])
     }
 
@@ -25,7 +25,7 @@ function HomeContent(): JSX.Element {
 
     return (
         <Container>
-            <h1>Tarefas</h1>
+            <h1>Tasks</h1>
 
             <NewTask onSubmit={addTask} />
             {tasks.map((task, index) => <Task key={index} task={task} onRemove={removeTask} />)}

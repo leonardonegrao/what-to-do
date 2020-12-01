@@ -15,6 +15,7 @@ export const Container = styled.div`
 
     form {
         width: 100%;
+        border-radius: 24px;
     }
 
     input {
@@ -22,6 +23,7 @@ export const Container = styled.div`
         height: 100%;
         border: 0;
         border-radius: 24px;
+        outline: 0;
 
         padding-left: 24px;
         font-size: 24px;
@@ -42,6 +44,7 @@ export const NewTaskButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 0px;
 
     &:hover {
          background-color: #504FC6;

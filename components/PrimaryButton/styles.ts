@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.button`
+    margin-left: 20px;
+    
     height: 40px;
     padding: 0 36px;
 
@@ -10,6 +12,10 @@ export const Container = styled.button`
 
     display: flex;
     align-items: center;
+
+    p {
+        font-weight: 600;
+    }
 
     svg {
         margin-right: 16px;
