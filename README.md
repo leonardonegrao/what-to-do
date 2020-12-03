@@ -1,6 +1,8 @@
-# <img src="https://github.com/leonardonegrao/what-to-do-client/blob/main/public/assets/logo_roxo.svg" width="250">
+# <img src="./public/assets/logo_roxo.svg" width="250">
 
 > **what_to_do** is a simple task manager for web.
+
+<img src="./public/assets/screenshot-1.png">
 
 ## :art: Features
 
