@@ -1,30 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# <img src="https://github.com/leonardonegrao/what-to-do-client/blob/main/public/assets/logo_roxo.svg" width="250">
 
-## Getting Started
+> **what_to_do** is a simple task manager for web.
 
-First, run the development server:
+## :art: Features
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+You're able to:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Create new tasks, defining name and date;
+- Update tasks's names;
+- Mark a task as important;
+- Mark a task as finished;
+- Delete tasks;
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## :rocket: How to run
 
-## Learn More
+To run the application in development it's necessary to have Yarn installed. Then, with the repository downloaded, run `yarn` to install the dependencies.
 
-To learn more about Next.js, take a look at the following resources:
+Once the dependencies are installed, it's possible to run the application by executing `yarn dev`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+However **what_to_do** is available online, thanks to Vercel, and can be found at https://what-to-do-khaki.vercel.app/.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## :toolbox: Technologies used
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://github.com/vercel/next.js)
+- [TypeScript](https://github.com/microsoft/TypeScript)
+- [React Calendar](https://github.com/wojtekmaj/react-calendar)
+- [React Icons](https://github.com/react-icons/react-icons)
+- [Styled Components](https://github.com/styled-components/styled-components)
+- [Vercel](https://vercel.com/)
