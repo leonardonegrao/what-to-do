@@ -60,7 +60,7 @@ function Task({ task, onRemove }: TaskProps): JSX.Element {
                         </p>
 
                         <p className="description">
-                            {taskState.group ? `${taskState.group} - ` : 'Não atribuída - '} {getDate(taskState.date)}
+                            {taskState.group ? `${taskState.group} - ` : ''} {getDate(taskState.date)}
                         </p>
                     </div>
 
