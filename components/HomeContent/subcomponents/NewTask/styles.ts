@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface CalendarProps {
+    visibility: string
+}
+
 export const Container = styled.div`
     height: 80px;
     width: 927px;
@@ -47,7 +51,7 @@ export const NewTaskButton = styled.button`
     border-radius: 0px;
 
     &:hover {
-         background-color: #504FC6;
+        background-color: #504FC6;
     }
 
     svg {
@@ -55,16 +59,26 @@ export const NewTaskButton = styled.button`
     }
 `
 
-export const CalendarContainer = styled.div`
-    width: 927px;
+export const CalendarContainer = styled.div<CalendarProps>`
+    visibility: ${props => props.visibility};
+
+    background-color: #FAFAFA;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    position: absolute;
+    left: 52%;
+    top: 17%;
+    z-index: 1;
+
+    border-radius: 16px;
 
     margin-top: 20px;
     padding: 20px;
 
     .react-calendar {
-        border-radius: 8px;
+        border-radius: 16px;
         overflow: hidden;
-        border: 1px solid rgba(51, 51, 51, 0.15);
+        border-width: 0;
     }
 
     .react-calendar__navigation {
@@ -89,6 +103,7 @@ export const CalendarContainer = styled.div`
         background-color: #4948C0;
         color: #FAFAFA;
         font-family: 'Roboto';
+        margin-bottom: 8px;
     }
 
     .react-calendar__month-view__days {

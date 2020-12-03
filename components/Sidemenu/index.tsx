@@ -1,10 +1,22 @@
 import { FiPlusCircle } from 'react-icons/fi'
 import MenuGroups from './subcomponents/MenuGroups'
-import PrimaryButton from '../PrimaryButton'
+import PrimaryButton from '../globals/PrimaryButton'
 import { Container } from './styles'
 import Logo from '../globals/Logo'
 
 function Sidemenu(): JSX.Element {
+
+    function getDate(): string {
+        const date = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            month: 'long',
+            day: '2-digit',
+            year: 'numeric',
+        });
+
+        return date;
+    }
+
     return (
         <aside>
             <Container>
@@ -12,11 +24,11 @@ function Sidemenu(): JSX.Element {
                     <Logo logoColor="white" />
                 </h1>
 
-                <h2 className="date">Saturday, November 21st</h2>
+                <h2 className="date">{getDate()}</h2>
 
-                <MenuGroups />
+                {/* <MenuGroups /> */}
 
-                <PrimaryButton Icon={FiPlusCircle} content="New Group" />
+                {/* <PrimaryButton Icon={FiPlusCircle} content="New Group" /> */}
             </Container>
         </aside>
     )

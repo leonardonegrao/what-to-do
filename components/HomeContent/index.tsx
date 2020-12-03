@@ -7,7 +7,8 @@ interface ITask {
     title: string
     group?: string
     date: Date
-    isImportant: boolean
+    isImportant: boolean,
+    status: boolean
 }
 
 function HomeContent(): JSX.Element {
@@ -19,6 +20,8 @@ function HomeContent(): JSX.Element {
 
     function removeTask(taskTitle: string) {
         const filteredTasks = tasks.filter(task => task.title !== taskTitle)
+        
+        console.log(filteredTasks)
 
         setTasks([...filteredTasks])
     }
