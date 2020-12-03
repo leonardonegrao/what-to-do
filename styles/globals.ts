@@ -5,7 +5,8 @@ const GlobalStyle = createGlobalStyle`
     body {
         padding: 0;
         margin: 0;
-        font-family: 'Roboto', sans-serif
+        font-family: 'Roboto', sans-serif;
+        -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -35,7 +36,12 @@ const GlobalStyle = createGlobalStyle`
         font-size: 16px;
     }
 
+    input {
+        font-family: 'Roboto', sans-serif;
+    }
+
     button {
+        font-family: 'Roboto', sans-serif;
         outline: 0;
         border: 0;
         border-color: transparent;

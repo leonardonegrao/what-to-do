@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Container as PrimaryButton } from '../PrimaryButton/styles'
+import { Container as PrimaryButton } from '../globals/PrimaryButton/styles'
 
 export const Container = styled.div`
     height: 100vh;

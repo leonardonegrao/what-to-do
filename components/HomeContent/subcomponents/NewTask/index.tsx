@@ -4,6 +4,7 @@ import { FiCalendar, FiPlus } from 'react-icons/fi'
 import { Container, CalendarContainer, NewTaskButton } from './styles'
 
 import 'react-calendar/dist/Calendar.css';
+import PrimaryButton from '../../../globals/PrimaryButton';
 
 interface NewTaskProps {
     onSubmit: Function
@@ -51,18 +52,19 @@ function NewTask({ onSubmit }: NewTaskProps): JSX.Element {
                         name="title"
                     />
                 </form>
-                <NewTaskButton>
+                
+                <NewTaskButton className="calendar">
                     <FiCalendar size={40} strokeWidth={1} onClick={handleShowCalendar} />
                 </NewTaskButton>
+                
                 <NewTaskButton type="submit" onClick={createTask}>
                     <FiPlus size={40} strokeWidth={1} />
-                </NewTaskButton>
+                </NewTaskButton>    
             </Container>
-            {showCalendar && (
-                <CalendarContainer>
-                    <Calendar className="calendar" onChange={handleChangeCalendar} />
-                </CalendarContainer>
-            )}
+            
+            <CalendarContainer visibility={showCalendar ? "visible" : "hidden"} >
+                <Calendar className="calendar" onChange={handleChangeCalendar} />
+            </CalendarContainer>
         </>
     )
 }
